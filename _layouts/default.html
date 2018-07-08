@@ -1,11 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 {% include head.html %}
 
-<body>
+<body> 
     {% include header.html %}
     {{content}}
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="vendor/bootstrap-3.3.7-dist/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="vendor/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="vendor/bootstrap-tree/bootstrap-treeview.min.js"></script>
+    <script>
+        var mytree = [
+            {
+                text: "JavaScript",
+                nodes: [
+                    {
+                        text: "Design Pattern",
+                        href: "/JavaScript/DesignPattern/index.html"
+                    }
+                ]
+            },
+            {
+                text: "Android",
+                nodes: [
+                    {
+                        text: "UI",
+                        href: "/Android/UI/index.html"
+                    }
+                ]
+            }
+
+        ];
+        $('#tree').treeview({ data: mytree, enableLinks: true });
+    </script>
+
 </body>
 
 </html>
